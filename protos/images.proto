@@ -1,0 +1,32 @@
+syntax = "proto3";
+option go_package = "github.com/Daniel-W-Innes/street_view_proxy/view";
+
+message Location {
+  double latitude = 1;
+  double longitude = 2;
+}
+
+message Request {
+  Location location = 1;
+}
+
+message Image {
+  int32 width = 1;
+  int32 height = 2;
+  bytes image_data = 3;
+}
+
+message Error{
+  string description = 1;
+}
+
+message Response {
+  Image image = 1;
+  Error Error = 2;
+}
+
+service ImageDownloader{
+  rpc GetImage (stream  Request) returns (stream Response);
+}
+
+

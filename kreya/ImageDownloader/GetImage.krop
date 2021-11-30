@@ -1,0 +1,15 @@
+{
+  "details": {
+    "methodFqn": "ImageDownloader.GetImage"
+  },
+  "requests": [
+    {
+      "location": "GetImage-request-0.json"
+    },
+    {
+      "location": "GetImage-request-1.json"
+    }
+  ],
+  "operationType": "duplexStreaming",
+  "invokerName": "grpc"
+}
